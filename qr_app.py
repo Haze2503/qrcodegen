@@ -1,4 +1,4 @@
-import qrcode
+﻿import qrcode
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from PIL import Image, ImageTk
@@ -266,4 +266,3 @@ refresh_theme_label()
 apply_theme()
 
 root.mainloop()
-
