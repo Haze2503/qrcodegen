@@ -4,7 +4,11 @@ from tkinter import filedialog, messagebox
 from PIL import Image, ImageTk
 import json
 import os
-SETTINGS_FILE = "settings.json"
+
+APP_NAME = "QR Studio"
+APP_DATA_DIR = os.path.join(os.getenv("APPDATA") or os.path.expanduser("~"), "QRStudio")
+os.makedirs(APP_DATA_DIR, exist_ok=True)
+SETTINGS_FILE = os.path.join(APP_DATA_DIR, "settings.json")
 
 def load_settings():
     if os.path.exists(SETTINGS_FILE):
@@ -191,7 +195,7 @@ def save_qr():
 
 # ---------------- UI ----------------
 root = tk.Tk()
-root.title("QR Studio")
+root.title(APP_NAME)
 root.geometry("620x720")
 root.minsize(620, 720)
 root.resizable(False, False)
